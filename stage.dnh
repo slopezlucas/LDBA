@@ -8,7 +8,7 @@ task RenderStage{
 	SetCameraRadius(1024);
 	SetCameraFocusX(0);
 	SetCameraFocusY(0);
-	SetCameraFocusZ(0);	;	
+	SetCameraFocusZ(0);
 	
 	let incX = -1024;
 	let incZ = -1024;
