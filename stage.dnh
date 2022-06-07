@@ -1,0 +1,55 @@
+task RenderStage{
+	SetFogEnable(true);
+	CreatePieceFog(GetCSD ~ "/graphics/fog.png", 0, 0, 4096, 4096, 237, 49, 105, 0, 0, 512*6);
+	SetFogParam(512*0, 512*4, 237, 49, 105);
+	SetCameraPerspectiveClip(16, 4096);
+	SetCameraAzimuthAngle(-90);
+	SetCameraElevationAngle(30);
+	SetCameraRadius(1024);
+	SetCameraFocusX(0);
+	SetCameraFocusY(0);
+	SetCameraFocusZ(0);	;	
+	
+	let incX = -1024;
+	let incZ = -1024;
+	loop(10){
+		CreatePiece(GetCSD ~ "/graphics/sky.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
+		CreatePiece(GetCSD ~ "/graphics/sky.png", 0, 0, 512, 512, 90, 0, 0, -incX, 512, incZ);
+		if(incX <= 1024{
+			incX += 512;
+		}
+		incZ += 512;
+	}
+	
+	incZ = -1024;
+	incX = -1024;
+	loop(10){
+		CreateCloud3D(GetCSD ~ "/graphics/cloud.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
+		CreateCloud3D(GetCSD ~ "/graphics/cloud.png", 0, 0, 512, 512, 90, 0, 0, -incX, 512, incZ);
+		if(incX <= 1024{
+			incX += 512;
+		}
+		incZ += 512;
+	}
+	
+	let i = 0;
+	let f = 0;
+	let k = 0;
+	let l = 0;
+	let scroll = 0;
+	loop {
+		i = sin(f);
+		f += 0.5;
+		k += sin(l);
+		l += 1;
+		SetFogParam(512 * 0, 512 * 7, 237 - k, 49, 105 + k);
+		scroll += 25;
+		SetCameraRoll(0 + i * 10);
+		SetCameraYaw(0 + 1 / 2);
+		SetCameraFocusZ(0 + scroll);
+		if(scroll > 512) {
+			scroll = 0;
+		}
+		yield;
+	}
+}
