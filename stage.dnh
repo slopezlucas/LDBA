@@ -14,7 +14,6 @@ task RenderStage{
 	let incZ = -1024;
 	loop(10){
 		CreatePiece(GetCSD ~ "/graphics/sky.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
-		CreatePiece(GetCSD ~ "/graphics/sky.png", 0, 0, 512, 512, 90, 0, 0, -incX, 512, incZ);
 		if(incX <= 1024{
 			incX += 512;
 		}
@@ -25,7 +24,6 @@ task RenderStage{
 	incX = -1024;
 	loop(10){
 		CreateCloud3D(GetCSD ~ "/graphics/cloud.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
-		CreateCloud3D(GetCSD ~ "/graphics/cloud.png", 0, 0, 512, 512, 90, 0, 0, -incX, 512, incZ);
 		if(incX <= 1024{
 			incX += 512;
 		}
