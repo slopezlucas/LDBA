@@ -14,7 +14,7 @@ task RenderStage{
 	let incZ = -1024;
 	loop(10){
 		CreatePiece(GetCSD ~ "/graphics/sky.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
-		if(incX <= 1024{
+		if(incX <= 1024){
 			incX += 512;
 		}
 		incZ += 512;
