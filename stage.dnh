@@ -24,7 +24,7 @@ task RenderStage{
 	incX = -1024;
 	loop(10){
 		CreateCloud3D(GetCSD ~ "/graphics/cloud.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
-		if(incX <= 1024{
+		if(incX <= 1024){
 			incX += 512;
 		}
 		incZ += 512;
