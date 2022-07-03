@@ -13,20 +13,22 @@ task RenderStage{
 	let incX = -1024;
 	let incZ = -1024;
 	loop(10){
-		CreatePiece(GetCSD ~ "/graphics/sky.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
-		if(incX <= 1024){
+		loop(5){
+			CreatePiece(GetCSD ~ "/graphics/sky.png", 0, 0, 512, 512, 90, 0, 0, incX, 0, incZ);
 			incX += 512;
 		}
+		incX = -1024;
 		incZ += 512;
 	}
 	
 	incZ = -1024;
 	incX = -1024;
 	loop(10){
-		CreateCloud3D(GetCSD ~ "/graphics/cloud.png", 0, 0, 512, 512, 90, 0, 0, -incX, 0, incZ);
-		if(incX <= 1024){
+		loop(5){
+			CreateCloud3D(GetCSD ~ "/graphics/cloud.png", 0, 0, 512, 512, 90, 0, 0, incX, 0, incZ);
 			incX += 512;
 		}
+		incX = -1024;
 		incZ += 512;
 	}
 	
