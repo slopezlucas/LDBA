@@ -53,3 +53,39 @@ task RenderStage{
 		yield;
 	}
 }
+
+function CreatePiece(pictureFile, left, top, right, bottom, angleX, angleY, angleZ, locX, locY, locZ){
+	let obj = ObjPrim_Create(OBJ_SPRITE_3D);
+	ObjPrim_SetTexture(obj, pictureFile);
+	Obj_SetRenderPriorityI(obj, 20);
+	ObjSprite3D_SetSourceDestRect(obj, left, top, right, bottom);
+	ObjRender_SetScaleXYZ(obj, 1, 1, 1);
+	ObjRender_SetZWrite(obj, true);
+	ObjRender_SetAngleXYZ(obj, angleX, angleY, angleZ);
+	ObjRender_SetPosition(obj, locX, locY, locZ);
+}
+
+function CreatePieceFog(pictureFile, left, top, right, bottom , r, g, b, locX, locY, locZ){
+	let obj = ObjPrim_Create(OBJ_SPRITE_3D);
+	ObjPrim_SetTexture(obj, pictureFile);
+	Obj_SetRenderPriorityI(obj, 20);
+	ObjSprite3D_SetSourceDestRect(obj, left, top, right, bottom);
+	ObjRender_SetScaleXYZ(obj, 1, 1, 1);
+	ObjRender_SetZWrite(obj, true);
+	ObjRender_SetPosition(obj, locX, locY, locZ);
+	ObjRender_SetColor(obj, r,g,b);
+	ObjSprite3D_SetBillboard(obj, true);
+}
+
+function CreateCloud3D(pictureFile, left, top, right, bottom, angleX, angleY, angleZ, locX, locY, locZ){
+	let obj = ObjPrim_Create(OBJ_SPRITE_3D);
+	ObjPrim_SetTexture(obj, pictureFile);
+	Obj_SetRenderPriorityI(obj, 20);
+	ObjSprite3D_SetSourceDestRect(obj, left, top, right, bottom);
+	ObjRender_SetScaleXYZ(obj, 1, 1, 1);
+	ObjRender_SetZWrite(obj, true);
+	ObjRender_SetAngleXYZ(obj, angleX, angleY, angleZ);
+	ObjRender_SetPosition(obj, locX, locY, locZ);
+	ObjRender_SetBlendType(obj,BLEND_ALPHA);
+	ObjRender_SetAlpha(obj,255);
+}
